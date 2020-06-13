@@ -20,8 +20,22 @@ var threeBtn = document.getElementById("threeBtn");
 var fourBtn = document.getElementById("fourBtn");
 var fiveBtn = document.getElementById("fiveBtn");
 
+//set variables for time sections
+var nineTime = document.getElementById("nineTime");
+var tenTime = document.getElementById("tenTime");
+var elevenTime = document.getElementById("elevenTime");
+var twelveTime = document.getElementById("twelveTime");
+var oneTime = document.getElementById("oneTime");
+var twoTime = document.getElementById("twoTime");
+var threeTime = document.getElementById("threeTime");
+var fourTime = document.getElementById("fourTime");
+var fiveTime = document.getElementById("fiveTime");
+
+var textArr = [nineText, tenText, elevenText, twelveText, oneText, twoText, threeText, fourText, fiveText];
+
 //set object array for every times todos
-var tasks = (!tasks) ? {
+var savedTasks = localStorage.getItem("tasks");
+var tasks = (!savedTasks) ? {
 		nine:"",
 		ten:"",
 		eleven:"",
@@ -31,18 +45,18 @@ var tasks = (!tasks) ? {
 		three:"",
 		four:"",
 		five:"",
-} : JSON.parse(tasks);
+} : JSON.parse(savedTasks);
 
 //set variables for text content
-nineBtn.textContent = tasks.nine;
-tenBtn.textContent = tasks.ten;
-elevenBtn.textContent = tasks.eleven;
-twelveBtn.textContent = tasks.twelve;
-oneBtn.textContent = tasks.one;
-twoBtn.textContent = tasks.two;
-threeBtn.textContent = tasks.three;
-fourBtn.textContent = tasks.four;
-fiveBtn.textContent = tasks.five;
+nineText.textContent = tasks.nine;
+tenText.textContent = tasks.ten;
+elevenText.textContent = tasks.eleven;
+twelveText.textContent = tasks.twelve;
+oneText.textContent = tasks.one;
+twoText.textContent = tasks.two;
+threeText.textContent = tasks.three;
+fourText.textContent = tasks.four;
+fiveText.textContent = tasks.five;
 
 //set a variable for the current day
 var currentDay = $("#currentDay");
@@ -107,23 +121,19 @@ twelveBtn.addEventListener("click",function(){
 	localStorage.setItem("tasks",JSON.stringify(tasks));
 })
 
+function setColor(){
+	textArr.forEach((block, i) => { const hr = i+9; $(block).addClass("past");   })
+	for(var i = 0; i < textArr.length; i++){
+		const hr = i + 9;
+		const now = moment().hour();
+		const block = textArr[i];
+		const className = (hr < now) ? "past" : (hr === now) ? "present" : "future";
+		$(block).addClass(className);
+	}
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+setColor();
 //write function to save tasks in local storage
 function saveTasks(){
 	localStorage.setItem(tasks);
