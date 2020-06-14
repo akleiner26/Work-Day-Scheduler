@@ -8,6 +8,8 @@ var twoText = document.getElementById("twoText");
 var threeText = document.getElementById("threeText");
 var fourText = document.getElementById("fourText");
 var fiveText = document.getElementById("fiveText");
+var textArr = [nineText, tenText, elevenText, twelveText, oneText, twoText, threeText, fourText, fiveText];
+
 
 //set variables for buttons
 var nineBtn = document.getElementById("nineBtn");
@@ -19,6 +21,8 @@ var twoBtn = document.getElementById("twoBtn");
 var threeBtn = document.getElementById("threeBtn");
 var fourBtn = document.getElementById("fourBtn");
 var fiveBtn = document.getElementById("fiveBtn");
+var allBtns = document.querySelector(".saveBtn");
+var btnArray = [nineBtn, tenBtn, elevenBtn, twelveBtn, oneBtn, twoBtn, threeBtn, fourBtn, fiveBtn]
 
 //set variables for time sections
 var nineTime = document.getElementById("nineTime");
@@ -31,7 +35,6 @@ var threeTime = document.getElementById("threeTime");
 var fourTime = document.getElementById("fourTime");
 var fiveTime = document.getElementById("fiveTime");
 
-var textArr = [nineText, tenText, elevenText, twelveText, oneText, twoText, threeText, fourText, fiveText];
 
 //set object array for every times todos
 var savedTasks = localStorage.getItem("tasks");
@@ -46,6 +49,8 @@ var tasks = (!savedTasks) ? {
 		four:"",
 		five:"",
 } : JSON.parse(savedTasks);
+
+var objArray = [tasks.nine, tasks.ten, tasks.eleven, tasks.twelve, tasks.one, tasks.two, tasks.three, tasks.four, tasks.five];
 
 //set variables for text content
 nineText.textContent = tasks.nine;
@@ -75,51 +80,58 @@ function update() {
   update();
 
 //add functions for what to do when buttons are pressed
-oneBtn.addEventListener("click",function(){
-	tasks.one = oneText.value;
-	localStorage.setItem("tasks",JSON.stringify(tasks));
-	return tasks;
+allBtns.addEventListener("click", function(){
+	for (var i = 0; i <= btnArray.length; i++){
+		objArray[i]=textArr[i].value;
+		localStorage.setItem("tasks",JSON.stringify(tasks));
+		return objArray[i];
+	}
 })
+// oneBtn.addEventListener("click",function(){
+// 	tasks.one = oneText.value;
+// 	localStorage.setItem("tasks",JSON.stringify(tasks));
+// 	return tasks;
+// })
 
-twoBtn.addEventListener("click",function(){
-	tasks.two = twoText.value;
-	localStorage.setItem("tasks",JSON.stringify(tasks));
-})
+// twoBtn.addEventListener("click",function(){
+// 	tasks.two = twoText.value;
+// 	localStorage.setItem("tasks",JSON.stringify(tasks));
+// })
 
-threeBtn.addEventListener("click",function(){
-	tasks.three = threeText.value;
-	localStorage.setItem("tasks",JSON.stringify(tasks));
-})
+// threeBtn.addEventListener("click",function(){
+// 	tasks.three = threeText.value;
+// 	localStorage.setItem("tasks",JSON.stringify(tasks));
+// })
 
-fourBtn.addEventListener("click",function(){
-	tasks.four = fourText.value;
-	localStorage.setItem("tasks",JSON.stringify(tasks));
-})
+// fourBtn.addEventListener("click",function(){
+// 	tasks.four = fourText.value;
+// 	localStorage.setItem("tasks",JSON.stringify(tasks));
+// })
 
-fiveBtn.addEventListener("click",function(){
-	tasks.five = fiveText.value;
-	localStorage.setItem("tasks",JSON.stringify(tasks));
-})
+// fiveBtn.addEventListener("click",function(){
+// 	tasks.five = fiveText.value;
+// 	localStorage.setItem("tasks",JSON.stringify(tasks));
+// })
 
-nineBtn.addEventListener("click",function(){
-	tasks.nine = nineText.value;
-	localStorage.setItem("tasks",JSON.stringify(tasks));
-})
+// nineBtn.addEventListener("click",function(){
+// 	tasks.nine = nineText.value;
+// 	localStorage.setItem("tasks",JSON.stringify(tasks));
+// })
 
-tenBtn.addEventListener("click",function(){
-	tasks.ten = tenText.value;
-	localStorage.setItem("tasks",JSON.stringify(tasks));
-})
+// tenBtn.addEventListener("click",function(){
+// 	tasks.ten = tenText.value;
+// 	localStorage.setItem("tasks",JSON.stringify(tasks));
+// })
 
-elevenBtn.addEventListener("click",function(){
-	tasks.eleven = elevenText.value;
-	localStorage.setItem("tasks",JSON.stringify(tasks));
-})
+// elevenBtn.addEventListener("click",function(){
+// 	tasks.eleven = elevenText.value;
+// 	localStorage.setItem("tasks",JSON.stringify(tasks));
+// })
 
-twelveBtn.addEventListener("click",function(){
-	tasks.twelve = twelveText.value;
-	localStorage.setItem("tasks",JSON.stringify(tasks));
-})
+// twelveBtn.addEventListener("click",function(){
+// 	tasks.twelve = twelveText.value;
+// 	localStorage.setItem("tasks",JSON.stringify(tasks));
+// })
 
 function setColor(){
 	textArr.forEach((block, i) => { const hr = i+9; $(block).addClass("past");   })
