@@ -18,7 +18,7 @@ https://akleiner26.github.io/Work-Day-Scheduler/
 
 ## Site Screenshots
 ### Launched Site
-<img src = "/assets/screenshots/launchedsite.png" alt="Launched Site Screenshot">
+<img src = "/assets/screenshots/launchedSite.png" alt="Launched Site Screenshot">
 
 ### Live Timer
 <img src = "/assets/screenshots/liveTimer.png" alt="Live Timer Screenshot">
