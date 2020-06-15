@@ -18,22 +18,22 @@ https://akleiner26.github.io/Work-Day-Scheduler/
 
 ## Site Screenshots
 ### Launched Site
-<img src = "/assets/screenshots/launchedsite" alt="Launched Site Screenshot">
+<img src = "/assets/screenshots/launchedsite.png" alt="Launched Site Screenshot">
 
 ### Live Timer
-<img src = "/assets/screenshots/liveTimer" alt="Live Timer Screenshot">
+<img src = "/assets/screenshots/liveTimer.png" alt="Live Timer Screenshot">
 
 ### Saved Data
-<img src = "/assets/screenshots/savedData" alt="Saved Data Screenshot">
+<img src = "/assets/screenshots/savedData.png" alt="Saved Data Screenshot">
 
 ### Past Events
-<img src = "/assets/screenshots/past" alt="Past Events Screenshot">
+<img src = "/assets/screenshots/past.png" alt="Past Events Screenshot">
 
 ### Present Event
-<img src = "/assets/screenshots/present" alt = "Present Event Screenshot">
+<img src = "/assets/screenshots/present.png" alt = "Present Event Screenshot">
 
 ### Future Event
-<img src = "/assets/screenshots/future" alt = "Future Event Screenshot">
+<img src = "/assets/screenshots/future.png" alt = "Future Event Screenshot">
 
 ### Local Storage
-<img src = "/assets/screenshots/savedData2" alt = "Local Storage Screenshot">
+<img src = "/assets/screenshots/savedData2.png" alt = "Local Storage Screenshot">
